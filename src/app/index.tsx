@@ -1,64 +1,54 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
-export default function Onboarding() {
+export default function HomeScreen() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 24,
-        backgroundColor: "#F8FAFC",
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 32,
-          fontWeight: "bold",
-          textAlign: "center",
-          marginBottom: 20,
-        }}
-      >
-        Aurora
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Aurora</Text>
 
-      <Text
-        style={{
-          fontSize: 22,
-          textAlign: "center",
-          marginBottom: 16,
-        }}
-      >
-        Understand Yourself Better Every Day
-      </Text>
-
-      <Text
-        style={{
-          textAlign: "center",
-          color: "#666",
-          marginBottom: 40,
-        }}
-      >
-        Track hydration, habits, sleep and receive personalized AI insights.
-      </Text>
-
-      <TouchableOpacity
-        style={{
-          backgroundColor: "#3B82F6",
-          paddingHorizontal: 30,
-          paddingVertical: 15,
-          borderRadius: 12,
-        }}
-      >
-        <Text
-          style={{
-            color: "white",
-            fontWeight: "bold",
-          }}
-        >
-          Get Started
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Daily Insight</Text>
+        <Text>
+          You are halfway toward your hydration goal today.
         </Text>
-      </TouchableOpacity>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Hydration</Text>
+        <Text>1200 / 3000 ml</Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Habits</Text>
+        <Text>2 / 5 completed</Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Current Streak</Text>
+        <Text>4 days</Text>
+      </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#F8FAFC",
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  card: {
+    backgroundColor: "white",
+    padding: 20,
+    borderRadius: 15,
+    marginBottom: 15,
+  },
+  cardTitle: {
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
+});
